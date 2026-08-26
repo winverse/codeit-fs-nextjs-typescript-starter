@@ -17,9 +17,9 @@ export default function PracticeHomePage() {
           </h1>
           <p className={styles.lead}>
             같은 Post 데이터를 기준으로 props, 이벤트, 기본 Hook, Context,
-            TanStack Query, react-hook-form 순서대로 타입을 채워 넣을 수 있도록
-            학습 포인트에만 <code>any</code>를 남겨 둔 시작본입니다. 교재의 각
-            장에서 지정한 파일을 수정하면서 순서대로 진행하면 됩니다.
+            TanStack Query 순서대로 타입을 채워 넣을 수 있도록 학습 포인트에만
+            <code>any</code>를 남겨 둔 시작본입니다. 교재의 각 장에서 지정한
+            파일을 수정하면서 순서대로 진행하면 됩니다.
           </p>
         </section>
 

@@ -19,7 +19,7 @@ export const LOCAL_PRACTICE_STEPS = [
   '3장에서 Post 타입과 PostCard/PostDetail/PostForm props의 any를 정리합니다.',
   '4장에서 이벤트 핸들러 매개변수의 any를 구체 타입으로 바꿉니다.',
   '5장에서 useState, useRef, useParams 관련 any와 제네릭을 채웁니다.',
-  '6장~8장에서 Context, TanStack Query, react-hook-form 구간의 any를 제거합니다.',
+  '6장과 7장에서 Context와 TanStack Query 구간의 any를 제거합니다.',
 ];
 
 export const CHAPTER_LINKS = [
@@ -43,13 +43,6 @@ export const CHAPTER_LINKS = [
     title: 'TanStack Query 타입 적용',
     description:
       'useQuery, useMutation, useInfiniteQuery의 데이터 타입과 입력 타입을 채웁니다.',
-  },
-  {
-    href: '/form',
-    eyebrow: '8장',
-    title: 'react-hook-form 보너스 챕터',
-    description:
-      'useForm 제네릭, submit 값, error 구조에 남은 any를 정리합니다.',
   },
 ] as const;
 
