@@ -35,9 +35,11 @@ pnpm dev
 
 ```bash
 cd frontend-starter
+pnpm format
+pnpm exec next typegen
 pnpm exec tsc --noEmit
 pnpm lint
 pnpm build
 ```
 
-`pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.
+`next typegen`은 `PageProps`처럼 라우트 구조에서 생성되는 전역 타입을 준비합니다. `pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.

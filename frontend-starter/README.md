@@ -40,3 +40,15 @@ NEXT_PUBLIC_API_BASE_URL=
 - `/posts/[postId]`: `useParams` 시작본
 - `/context`: 6장 Context 학습 구간
 - `/query`: 7장 TanStack Query 학습 구간
+
+## 교재 적용 후 검증
+
+백엔드를 실행한 상태에서 다음 명령을 순서대로 실행합니다.
+
+```bash
+pnpm format
+pnpm exec next typegen
+pnpm exec tsc --noEmit
+pnpm lint
+pnpm build
+```
