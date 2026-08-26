@@ -2,11 +2,10 @@
 
 import { useQuery } from '@tanstack/react-query';
 import { getPost, getPosts } from '@/lib/api/posts';
-import { HttpError } from '@/lib/api/request';
 import { queryKeys } from '@/lib/query-keys';
 
 export function usePostsQuery(initialPosts?: any) {
-  return useQuery<any, HttpError>({
+  return useQuery<any, Error>({
     queryKey: queryKeys.posts,
     queryFn: getPosts,
     initialData: initialPosts,
@@ -14,7 +13,7 @@ export function usePostsQuery(initialPosts?: any) {
 }
 
 export function usePostQuery(postId: any) {
-  return useQuery<any, HttpError>({
+  return useQuery<any, Error>({
     queryKey: queryKeys.post(postId ?? 'empty'),
     queryFn: () => getPost(postId ?? ''),
     enabled: Boolean(postId),
