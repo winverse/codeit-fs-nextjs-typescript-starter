@@ -33,7 +33,7 @@ function ContextPostsWorkspace() {
       id: nanoid(),
       title: 'Context에서 추가한 임시 포스트',
       content:
-        '이 시작본은 Provider props, createContext 제네릭, mountedRef 패턴에 any가 남아 있는 상태입니다.',
+        '이 시작본은 Provider props, createContext 제네릭, requestIdRef 패턴에 any가 남아 있는 상태입니다.',
       authorId: 'author-4',
     };
 
@@ -47,7 +47,7 @@ function ContextPostsWorkspace() {
         <p className={styles.lead}>
           Context 실습에서는 Provider가 어떤 값을 공급하는지 먼저 타입으로
           고정하는 흐름을 다룹니다. 현재 코드는 교재를 따라가며 value 구조,
-          Provider props, mountedRef 관련 타입을 채워 넣도록 일부러 느슨하게
+          Provider props, requestIdRef 관련 타입을 채워 넣도록 일부러 느슨하게
           두었습니다.
         </p>
       </section>
@@ -85,7 +85,7 @@ function ContextPostsWorkspace() {
 
           <Panel
             title="Context value 핵심 구성"
-            description="교재 6장에서 value 타입, Provider props, mountedRef 위치를 정리합니다."
+            description="교재 6장에서 value 타입, Provider props, requestIdRef 위치를 정리합니다."
           >
             <p className={styles.lead}>
               이 구간에서는 <code>createContext</code> 제네릭과{' '}

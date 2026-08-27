@@ -1,6 +1,6 @@
 'use client';
 
-import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 import { getPosts } from '@/lib/api/posts';
 
 interface PostContextValue {
@@ -24,31 +24,24 @@ export function PostProvider({ children, initialPosts }: PostProviderProps) {
   const [posts, setPosts] = useState<any>(initialPosts);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
-  const mountedRef = useRef<any>(false);
-
-  useEffect(() => {
-    mountedRef.current = true;
-
-    return () => {
-      mountedRef.current = false;
-    };
-  }, []);
+  const requestIdRef = useRef<any>(0);
 
   async function refreshPosts() {
+    const requestId = ++requestIdRef.current;
     setLoading(true);
     setError(null);
 
     try {
       const fetchedPosts = await getPosts();
-      if (mountedRef.current) {
-        setPosts(fetchedPosts);
-      }
+      if (requestId !== requestIdRef.current) return;
+
+      setPosts(fetchedPosts);
     } catch {
-      if (mountedRef.current) {
-        setError('Context에서 포스트를 다시 불러오지 못했습니다.');
-      }
+      if (requestId !== requestIdRef.current) return;
+
+      setError('Context에서 포스트를 다시 불러오지 못했습니다.');
     } finally {
-      if (mountedRef.current) {
+      if (requestId === requestIdRef.current) {
         setLoading(false);
       }
     }

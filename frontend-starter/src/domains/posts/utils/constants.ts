@@ -35,7 +35,7 @@ export const CHAPTER_LINKS = [
     eyebrow: '6장',
     title: 'Context 타입 적용',
     description:
-      'PostContext의 value, Provider props, mountedRef 관련 any를 정리합니다.',
+      'PostContext의 value, Provider props, requestIdRef 관련 any를 정리합니다.',
   },
   {
     href: '/query',
