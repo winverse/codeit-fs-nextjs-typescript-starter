@@ -1,12 +1,12 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
+import { skipToken, useQuery } from '@tanstack/react-query';
 import { getPost, getPosts } from '@/lib/api/posts';
 import { queryKeys } from '@/lib/query-keys';
 
 export function usePostsQuery(initialPosts?: any) {
   return useQuery<any, Error>({
-    queryKey: queryKeys.posts,
+    queryKey: queryKeys.list,
     queryFn: getPosts,
     initialData: initialPosts,
   });
@@ -14,8 +14,7 @@ export function usePostsQuery(initialPosts?: any) {
 
 export function usePostQuery(postId: any) {
   return useQuery<any, Error>({
-    queryKey: queryKeys.post(postId ?? 'empty'),
-    queryFn: () => getPost(postId ?? ''),
-    enabled: Boolean(postId),
+    queryKey: queryKeys.detail(postId),
+    queryFn: postId ? () => getPost(postId) : skipToken,
   });
 }

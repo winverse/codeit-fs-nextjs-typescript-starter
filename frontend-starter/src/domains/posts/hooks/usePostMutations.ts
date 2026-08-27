@@ -10,9 +10,9 @@ export function useCreatePostMutation() {
   return useMutation<any, Error, any>({
     mutationFn: createPost,
     onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.posts });
+      await queryClient.invalidateQueries({ queryKey: queryKeys.list });
       await queryClient.invalidateQueries({
-        queryKey: queryKeys.infinitePosts,
+        queryKey: queryKeys.infinite,
       });
     },
   });
@@ -29,12 +29,12 @@ export function useUpdatePostMutation() {
   return useMutation<any, Error, UpdatePostVariables>({
     mutationFn: ({ postId, input }) => updatePost(postId, input),
     onSuccess: async (_, variables) => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.posts });
+      await queryClient.invalidateQueries({ queryKey: queryKeys.list });
       await queryClient.invalidateQueries({
-        queryKey: queryKeys.post(variables.postId),
+        queryKey: queryKeys.detail(variables.postId),
       });
       await queryClient.invalidateQueries({
-        queryKey: queryKeys.infinitePosts,
+        queryKey: queryKeys.infinite,
       });
     },
   });
@@ -46,10 +46,12 @@ export function useDeletePostMutation() {
   return useMutation<any, Error, any>({
     mutationFn: deletePost,
     onSuccess: async (_, deletedPostId) => {
-      await queryClient.invalidateQueries({ queryKey: queryKeys.posts });
-      queryClient.removeQueries({ queryKey: queryKeys.post(deletedPostId) });
+      await queryClient.invalidateQueries({ queryKey: queryKeys.list });
+      queryClient.removeQueries({
+        queryKey: queryKeys.detail(deletedPostId),
+      });
       await queryClient.invalidateQueries({
-        queryKey: queryKeys.infinitePosts,
+        queryKey: queryKeys.infinite,
       });
     },
   });

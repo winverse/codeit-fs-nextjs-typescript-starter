@@ -1,5 +1,6 @@
 export const queryKeys = {
-  posts: ['posts'] as const,
-  post: (postId: string) => ['posts', postId] as const,
-  infinitePosts: ['posts', 'infinite'] as const,
+  all: ['posts'] as const,
+  list: ['posts', 'list'] as const,
+  detail: (postId: string | null) => ['posts', 'detail', postId] as const,
+  infinite: ['posts', 'infinite'] as const,
 };
