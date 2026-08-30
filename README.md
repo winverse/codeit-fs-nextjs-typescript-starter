@@ -1,6 +1,6 @@
 # Next.js TypeScript starter
 
-Next.js 프로젝트에 TypeScript 타입을 단계적으로 적용하는 35번 과정의 학생용 시작 저장소입니다. 하나의 clone 안에서 백엔드와 프런트엔드를 함께 실행하고, 교재 순서대로 타입을 누적해 완성합니다.
+Next.js 프로젝트에 TypeScript 타입을 단계적으로 적용하는 학생용 시작 저장소입니다. 하나의 clone 안에서 백엔드와 프런트엔드를 함께 실행하고, 교재 순서대로 타입을 누적해 완성합니다.
 
 ## 처음 확인할 상태
 
@@ -31,7 +31,7 @@ pnpm dev
 
 브라우저에서 `http://localhost:3000`을 열고 과정 안내와 실습 라우트를 확인합니다. 백엔드는 `http://localhost:4000`에서 실행되어야 합니다.
 
-## 기본 검증
+## 포맷 및 검증
 
 ```bash
 cd frontend-starter
@@ -42,4 +42,4 @@ pnpm lint
 pnpm build
 ```
 
-`next typegen`은 `PageProps`처럼 라우트 구조에서 생성되는 전역 타입을 준비합니다. `pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.
+`pnpm format`은 프로젝트 파일을 Prettier 형식으로 수정합니다. `next typegen`은 `PageProps`처럼 라우트 구조에서 생성되는 전역 타입을 준비합니다. `pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.

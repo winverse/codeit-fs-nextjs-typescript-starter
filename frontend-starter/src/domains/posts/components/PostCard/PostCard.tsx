@@ -19,8 +19,8 @@ export default function PostCard({
       className={clsx(styles.card, isSelected && styles.selected)}
       onClick={() => onSelect?.(post)}
     >
-      <h3 className={styles.title}>{post.title}</h3>
-      <p className={styles.content}>{post.content}</p>
+      <span className={styles.title}>{post.title}</span>
+      <span className={styles.content}>{post.content}</span>
       <span className={styles.meta}>{getAuthorLabel(post.authorId)}</span>
     </button>
   );

@@ -27,10 +27,10 @@ pnpm dev
 
 ## 환경 변수
 
-`.env.local` 파일에 아래 값을 넣습니다.
+`.env.example`을 복사하면 로컬 백엔드 주소가 설정됩니다.
 
 ```bash
-NEXT_PUBLIC_API_BASE_URL=
+cp .env.example .env.local
 ```
 
 ## 라우트 구성
@@ -41,7 +41,7 @@ NEXT_PUBLIC_API_BASE_URL=
 - `/context`: 6장 Context 학습 구간
 - `/query`: 7장 TanStack Query 학습 구간
 
-## 교재 적용 후 검증
+## 교재 적용 후 포맷 및 검증
 
 백엔드를 실행한 상태에서 다음 명령을 순서대로 실행합니다.
 
@@ -52,3 +52,5 @@ pnpm exec tsc --noEmit
 pnpm lint
 pnpm build
 ```
+
+`pnpm format`은 프로젝트 파일을 Prettier 형식으로 수정합니다.

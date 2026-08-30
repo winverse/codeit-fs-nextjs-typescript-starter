@@ -25,12 +25,14 @@ export const selected = style({
 });
 
 export const title = style({
+  display: 'block',
   fontSize: '1rem',
   fontWeight: 700,
   marginBottom: '0.5rem',
 });
 
 export const content = style({
+  display: 'block',
   color: 'var(--color-text-secondary)',
   lineHeight: 1.6,
   marginBottom: '0.75rem',
