@@ -1,9 +1,9 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Button from '@/components/Button';
-import SelectField from '@/components/SelectField';
-import TextField from '@/components/TextField';
+import { Button } from '@/components/Button';
+import { SelectField } from '@/components/SelectField';
+import { TextField } from '@/components/TextField';
 import {
   AUTHOR_OPTIONS,
   DEFAULT_POST_FORM_VALUES,

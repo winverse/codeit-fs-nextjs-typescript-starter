@@ -1,1 +1,1 @@
-export { default } from './QueryPostsPage';
+export { default as QueryPostsPage } from './QueryPostsPage';

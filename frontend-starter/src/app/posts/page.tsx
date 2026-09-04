@@ -1,4 +1,4 @@
-import LocalPostsPage from '@/domains/posts/components/LocalPostsPage';
+import { LocalPostsPage } from '@/domains/posts/components/LocalPostsPage';
 import { getPosts } from '@/lib/api/posts';
 
 export default async function PostsPage({

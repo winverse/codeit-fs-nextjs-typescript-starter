@@ -1,4 +1,4 @@
-import QueryPostsPage from '@/domains/posts/components/QueryPostsPage';
+import { QueryPostsPage } from '@/domains/posts/components/QueryPostsPage';
 import { getPosts } from '@/lib/api/posts';
 
 export default async function QueryPostsRoutePage() {

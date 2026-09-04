@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Panel from '@/components/Panel';
+import { Panel } from '@/components/Panel';
 import {
   CHAPTER_LINKS,
   LOCAL_PRACTICE_STEPS,

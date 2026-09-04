@@ -1,1 +1,1 @@
-export { default } from './ContextPostsPage';
+export { default as ContextPostsPage } from './ContextPostsPage';

@@ -1,4 +1,4 @@
-import PostCard from '@/domains/posts/components/PostCard';
+import { PostCard } from '@/domains/posts/components/PostCard';
 import type { Post } from '@/domains/posts/types';
 import * as styles from './PostList.css';
 

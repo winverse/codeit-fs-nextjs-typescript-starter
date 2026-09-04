@@ -1,1 +1,1 @@
-export { default } from './PostForm';
+export { default as PostForm } from './PostForm';
