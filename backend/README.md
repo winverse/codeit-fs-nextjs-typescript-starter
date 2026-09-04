@@ -5,7 +5,7 @@ json-server의 `Service`를 감싼 실습용 API 서버입니다. 기본 CRUD �
 ## 실행
 
 ```bash
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
