@@ -1,4 +1,4 @@
-import { LOCAL_POSTS_PAGE_LIMIT } from '@/domains/posts/utils/constants';
+import { LOCAL_POSTS_PAGE_LIMIT } from '@/features/posts/utils/constants';
 import { request } from '@/lib/api/request';
 
 export async function getPosts() {

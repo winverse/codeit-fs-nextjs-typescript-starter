@@ -3,7 +3,7 @@ import { Panel } from '@/components/Panel';
 import {
   CHAPTER_LINKS,
   LOCAL_PRACTICE_STEPS,
-} from '@/domains/posts/utils/constants';
+} from '@/features/posts/utils/constants';
 import * as styles from './PracticeHomePage.css';
 
 export default function PracticeHomePage() {

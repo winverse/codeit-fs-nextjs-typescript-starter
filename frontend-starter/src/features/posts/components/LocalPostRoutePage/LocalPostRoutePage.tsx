@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { Panel } from '@/components/Panel';
-import { PostDetail } from '@/domains/posts/components/PostDetail';
-import useLocalPostDetailPage from '@/domains/posts/hooks/useLocalPostDetailPage';
+import { PostDetail } from '@/features/posts/components/PostDetail';
+import useLocalPostDetailPage from '@/features/posts/hooks/useLocalPostDetailPage';
 import * as styles from './LocalPostRoutePage.css';
 
 export default function LocalPostRoutePage() {

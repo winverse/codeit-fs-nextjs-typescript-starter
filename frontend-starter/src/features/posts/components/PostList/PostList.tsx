@@ -1,5 +1,5 @@
-import { PostCard } from '@/domains/posts/components/PostCard';
-import type { Post } from '@/domains/posts/types';
+import { PostCard } from '@/features/posts/components/PostCard';
+import type { Post } from '@/features/posts/types';
 import * as styles from './PostList.css';
 
 interface PostListProps {

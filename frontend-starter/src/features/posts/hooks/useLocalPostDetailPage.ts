@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { Post } from '@/domains/posts/types';
+import type { Post } from '@/features/posts/types';
 import { getPost } from '@/lib/api/posts';
 
 export default function useLocalPostDetailPage(postId: string | null) {

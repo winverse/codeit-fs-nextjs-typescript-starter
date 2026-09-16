@@ -4,13 +4,13 @@ import { useMemo, useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Button } from '@/components/Button';
 import { Panel } from '@/components/Panel';
-import { PostDetail } from '@/domains/posts/components/PostDetail';
-import { PostList } from '@/domains/posts/components/PostList';
+import { PostDetail } from '@/features/posts/components/PostDetail';
+import { PostList } from '@/features/posts/components/PostList';
 import {
   PostProvider,
   usePostContext,
-} from '@/domains/posts/contexts/PostContext';
-import type { Post } from '@/domains/posts/types';
+} from '@/features/posts/contexts/PostContext';
+import type { Post } from '@/features/posts/types';
 import * as styles from './ContextPostsPage.css';
 
 interface ContextPostsPageProps {

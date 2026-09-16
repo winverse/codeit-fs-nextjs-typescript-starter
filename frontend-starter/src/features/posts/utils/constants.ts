@@ -1,4 +1,4 @@
-import type { AuthorOption, Post } from '@/domains/posts/types';
+import type { AuthorOption, Post } from '@/features/posts/types';
 
 export const AUTHOR_OPTIONS: AuthorOption[] = [
   { value: 'author-1', label: '1번 강사' },

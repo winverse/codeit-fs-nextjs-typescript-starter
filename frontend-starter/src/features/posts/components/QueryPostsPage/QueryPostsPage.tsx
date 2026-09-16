@@ -4,20 +4,20 @@ import { useMemo, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Button } from '@/components/Button';
 import { Panel } from '@/components/Panel';
-import { PostCard } from '@/domains/posts/components/PostCard';
-import { PostDetail } from '@/domains/posts/components/PostDetail';
-import { PostForm } from '@/domains/posts/components/PostForm';
-import type { Post, PostMutationInput, PostPage } from '@/domains/posts/types';
-import { useInfinitePostsQuery } from '@/domains/posts/hooks/useInfinitePostsQuery';
+import { PostCard } from '@/features/posts/components/PostCard';
+import { PostDetail } from '@/features/posts/components/PostDetail';
+import { PostForm } from '@/features/posts/components/PostForm';
+import type { Post, PostMutationInput, PostPage } from '@/features/posts/types';
+import { useInfinitePostsQuery } from '@/features/posts/hooks/useInfinitePostsQuery';
 import {
   useCreatePostMutation,
   useDeletePostMutation,
   useUpdatePostMutation,
-} from '@/domains/posts/hooks/usePostMutations';
+} from '@/features/posts/hooks/usePostMutations';
 import {
   usePostQuery,
   usePostsQuery,
-} from '@/domains/posts/hooks/usePostQueries';
+} from '@/features/posts/hooks/usePostQueries';
 import * as styles from './QueryPostsPage.css';
 
 interface QueryPostsPageProps {

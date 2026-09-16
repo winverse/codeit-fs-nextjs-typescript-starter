@@ -1,4 +1,4 @@
-import { PracticeHomePage } from '@/domains/posts/components/PracticeHomePage';
+import { PracticeHomePage } from '@/features/posts/components/PracticeHomePage';
 
 export default function Home() {
   return <PracticeHomePage />;

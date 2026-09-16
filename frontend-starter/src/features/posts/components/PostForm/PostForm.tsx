@@ -7,7 +7,7 @@ import { TextField } from '@/components/TextField';
 import {
   AUTHOR_OPTIONS,
   DEFAULT_POST_FORM_VALUES,
-} from '@/domains/posts/utils/constants';
+} from '@/features/posts/utils/constants';
 import * as styles from './PostForm.css';
 
 interface PostFormProps {
