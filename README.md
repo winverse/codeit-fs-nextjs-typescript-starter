@@ -8,7 +8,7 @@ Next.js 프로젝트에 TypeScript 타입을 단계적으로 적용하는 학생
 - `frontend-starter`: `/posts`, `/posts/[postId]`, `/context`, `/query` 화면을 제공하는 Next.js 프로젝트입니다.
 - 첫 실행 화면과 API 호출은 동작하지만, 학습 대상 타입 자리에는 의도적으로 `any`가 남아 있습니다.
 
-공통 UI, 스타일, 로컬 API 서버와 화면 골격은 제공 코드입니다. 학생은 교재가 지정한 `src/features/posts`와 `src/lib`의 타입·컴포넌트·Hook·요청 함수를 중심으로 수정합니다. 같은 clone에서 앞 단계의 변경을 유지한 채 다음 단계를 이어갑니다.
+공통 UI, 스타일, 로컬 API 서버와 화면 골격은 제공 코드입니다. 학생은 교재가 지정한 `src/features/posts`, `src/lib`, `src/app/posts`의 타입·컴포넌트·Hook·요청 함수를 중심으로 수정합니다. 같은 clone에서 앞 단계의 변경을 유지한 채 다음 단계를 이어갑니다.
 
 ## 처음 실행하기
 
@@ -16,7 +16,7 @@ Next.js 프로젝트에 TypeScript 타입을 단계적으로 적용하는 학생
 
 ```bash
 cd backend
-pnpm install --frozen-lockfile
+pnpm install
 pnpm dev
 ```
 
@@ -25,7 +25,7 @@ pnpm dev
 ```bash
 cd frontend-starter
 cp .env.example .env.local
-pnpm install --frozen-lockfile
+pnpm install
 pnpm dev
 ```
 

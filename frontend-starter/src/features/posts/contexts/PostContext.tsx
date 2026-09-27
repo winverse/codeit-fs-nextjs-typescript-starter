@@ -33,11 +33,15 @@ export function PostProvider({ children, initialPosts }: PostProviderProps) {
 
     try {
       const fetchedPosts = await getPosts();
-      if (requestId !== requestIdRef.current) return;
+      if (requestId !== requestIdRef.current) {
+        return;
+      }
 
       setPosts(fetchedPosts);
     } catch {
-      if (requestId !== requestIdRef.current) return;
+      if (requestId !== requestIdRef.current) {
+        return;
+      }
 
       setError("Context에서 포스트를 다시 불러오지 못했습니다.");
     } finally {

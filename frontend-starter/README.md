@@ -13,7 +13,7 @@
 
 ```bash
 cd ../backend
-pnpm install --frozen-lockfile
+pnpm install
 pnpm dev
 ```
 
@@ -21,7 +21,7 @@ pnpm dev
 
 ```bash
 cp .env.example .env.local
-pnpm install --frozen-lockfile
+pnpm install
 pnpm dev
 ```
 

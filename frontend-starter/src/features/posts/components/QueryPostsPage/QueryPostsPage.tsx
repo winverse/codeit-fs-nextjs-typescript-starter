@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Button } from "@/components/Button";
 import { Panel } from "@/components/Panel";
@@ -39,12 +39,9 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
 
   const selectedPost = selectedPostQuery.data ?? null;
   const posts = postsQuery.data ?? [];
-  const infinitePosts = useMemo(
-    () =>
-      infinitePostsQuery.data?.pages.flatMap((page: PostPage) => page.items) ??
-      [],
-    [infinitePostsQuery.data],
-  );
+  const infinitePosts =
+    infinitePostsQuery.data?.pages.flatMap((page: PostPage) => page.items) ??
+    [];
 
   async function handleCreatePost(input: PostMutationInput) {
     await createPostMutation.mutateAsync(input);

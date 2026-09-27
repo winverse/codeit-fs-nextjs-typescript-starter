@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { nanoid } from "nanoid";
 import { Button } from "@/components/Button";
 import { Panel } from "@/components/Panel";
@@ -23,10 +23,8 @@ function ContextPostsWorkspace() {
     posts[0]?.id ?? null,
   );
 
-  const selectedPost = useMemo(
-    () => posts.find((post: Post) => post.id === selectedPostId) ?? null,
-    [posts, selectedPostId],
-  );
+  const selectedPost =
+    posts.find((post: Post) => post.id === selectedPostId) ?? null;
 
   function handleAddContextDraft() {
     const nextPost = {
@@ -46,9 +44,8 @@ function ContextPostsWorkspace() {
       <section>
         <p className={styles.lead}>
           Context 실습에서는 Provider가 어떤 값을 공급하는지 먼저 타입으로
-          고정하는 흐름을 다룹니다. 현재 코드는 교재를 따라가며 value 구조,
-          Provider props, requestIdRef 관련 타입을 채워 넣도록 일부러 느슨하게
-          두었습니다.
+          고정하는 흐름을 다룹니다. 현재 코드는 교재를 따라가며 value 구조와
+          Provider props 관련 타입을 채워 넣도록 일부러 느슨하게 두었습니다.
         </p>
       </section>
 
@@ -85,13 +82,12 @@ function ContextPostsWorkspace() {
 
           <Panel
             title="Context value 핵심 구성"
-            description="교재 6장에서 value 타입, Provider props, requestIdRef 위치를 정리합니다."
+            description="교재 6장에서 value 타입과 Provider props를 정리합니다."
           >
             <p className={styles.lead}>
-              이 구간에서는 <code>createContext</code> 제네릭과{" "}
-              <code>useRef</code> 제네릭이 아직 느슨하게 남아 있습니다. 교재를
-              따라가며 Context value가 어떤 모양을 가져야 하는지 명확히 연결하면
-              됩니다.
+              이 구간에서는 <code>createContext</code> 제네릭이 아직 느슨하게
+              남아 있습니다. 교재를 따라가며 Context value가 어떤 모양을 가져야
+              하는지 명확히 연결하면 됩니다.
             </p>
           </Panel>
         </div>
