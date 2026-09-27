@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { nanoid } from 'nanoid';
-import { getPosts } from '@/lib/api/posts';
+import { useState } from "react";
+import { nanoid } from "nanoid";
+import { getPosts } from "@/lib/api/posts";
 
 export default function useLocalPostsPage(initialPosts: any) {
   const [posts, setPosts] = useState<any>(initialPosts);
@@ -27,7 +27,7 @@ export default function useLocalPostsPage(initialPosts: any) {
       setPosts((previousPosts: any) => [nextPost, ...previousPosts]);
       setSelectedPostId(nextPost.id);
     } catch {
-      setError('로컬 포스트를 추가하지 못했습니다.');
+      setError("로컬 포스트를 추가하지 못했습니다.");
     } finally {
       setIsLoading(false);
     }
@@ -42,7 +42,7 @@ export default function useLocalPostsPage(initialPosts: any) {
       setPosts(fetchedPosts);
       setSelectedPostId(fetchedPosts[0]?.id ?? null);
     } catch {
-      setError('포스트 목록을 다시 불러오지 못했습니다.');
+      setError("포스트 목록을 다시 불러오지 못했습니다.");
     } finally {
       setIsLoading(false);
     }

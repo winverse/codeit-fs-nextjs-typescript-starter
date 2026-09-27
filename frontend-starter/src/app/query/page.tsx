@@ -1,5 +1,5 @@
-import { QueryPostsPage } from '@/features/posts/components/QueryPostsPage';
-import { getPosts } from '@/lib/api/posts';
+import { QueryPostsPage } from "@/features/posts/components/QueryPostsPage";
+import { getPosts } from "@/lib/api/posts";
 
 export default async function QueryPostsRoutePage() {
   const initialPosts = await getPosts();

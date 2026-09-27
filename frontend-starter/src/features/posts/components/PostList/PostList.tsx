@@ -1,6 +1,6 @@
-import { PostCard } from '@/features/posts/components/PostCard';
-import type { Post } from '@/features/posts/types';
-import * as styles from './PostList.css';
+import { PostCard } from "@/features/posts/components/PostCard";
+import type { Post } from "@/features/posts/types";
+import * as styles from "./PostList.css";
 
 interface PostListProps {
   posts: Post[];
@@ -13,7 +13,7 @@ export default function PostList({
   posts,
   selectedPostId,
   onSelectPost,
-  emptyText = '표시할 포스트가 없습니다.',
+  emptyText = "표시할 포스트가 없습니다.",
 }: PostListProps) {
   if (posts.length === 0) {
     return <p className={styles.empty}>{emptyText}</p>;

@@ -1,5 +1,5 @@
-import { getAuthorLabel } from '@/features/posts/utils/constants';
-import * as styles from './PostDetail.css';
+import { getAuthorLabel } from "@/features/posts/utils/constants";
+import * as styles from "./PostDetail.css";
 
 interface PostDetailProps {
   post: any;

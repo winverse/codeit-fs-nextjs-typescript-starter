@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-import { Panel } from '@/components/Panel';
-import { PostDetail } from '@/features/posts/components/PostDetail';
-import useLocalPostDetailPage from '@/features/posts/hooks/useLocalPostDetailPage';
-import * as styles from './LocalPostRoutePage.css';
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { Panel } from "@/components/Panel";
+import { PostDetail } from "@/features/posts/components/PostDetail";
+import useLocalPostDetailPage from "@/features/posts/hooks/useLocalPostDetailPage";
+import * as styles from "./LocalPostRoutePage.css";
 
 export default function LocalPostRoutePage() {
   const params = useParams<any>();
-  const postId = typeof params.postId === 'string' ? params.postId : null;
+  const postId = typeof params.postId === "string" ? params.postId : null;
   const { post, isLoading, error } = useLocalPostDetailPage(postId);
 
   return (

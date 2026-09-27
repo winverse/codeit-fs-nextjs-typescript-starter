@@ -1,8 +1,8 @@
-import { createVanillaExtractPlugin } from '@vanilla-extract/next-plugin';
+import { createVanillaExtractPlugin } from "@vanilla-extract/next-plugin";
 
 const withVanillaExtract = createVanillaExtractPlugin({
   unstable_turbopack: {
-    mode: 'auto',
+    mode: "auto",
   },
 });
 

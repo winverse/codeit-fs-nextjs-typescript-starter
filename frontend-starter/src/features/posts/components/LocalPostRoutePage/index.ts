@@ -1,1 +1,1 @@
-export { default as LocalPostRoutePage } from './LocalPostRoutePage';
+export { default as LocalPostRoutePage } from "./LocalPostRoutePage";

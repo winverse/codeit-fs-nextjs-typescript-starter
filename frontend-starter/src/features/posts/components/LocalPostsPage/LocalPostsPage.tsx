@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Button } from '@/components/Button';
-import { Panel } from '@/components/Panel';
-import { PostDetail } from '@/features/posts/components/PostDetail';
-import { PostForm } from '@/features/posts/components/PostForm';
-import { PostList } from '@/features/posts/components/PostList';
-import useLocalPostsPage from '@/features/posts/hooks/useLocalPostsPage';
-import type { Post } from '@/features/posts/types';
-import * as styles from './LocalPostsPage.css';
+import Link from "next/link";
+import { Button } from "@/components/Button";
+import { Panel } from "@/components/Panel";
+import { PostDetail } from "@/features/posts/components/PostDetail";
+import { PostForm } from "@/features/posts/components/PostForm";
+import { PostList } from "@/features/posts/components/PostList";
+import useLocalPostsPage from "@/features/posts/hooks/useLocalPostsPage";
+import type { Post } from "@/features/posts/types";
+import * as styles from "./LocalPostsPage.css";
 
 interface LocalPostsPageProps {
   initialPosts: Post[];

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { createContext, useContext, useRef, useState } from 'react';
-import { getPosts } from '@/lib/api/posts';
+import { createContext, useContext, useRef, useState } from "react";
+import { getPosts } from "@/lib/api/posts";
 
 interface PostContextValue {
   posts: any;
@@ -39,7 +39,7 @@ export function PostProvider({ children, initialPosts }: PostProviderProps) {
     } catch {
       if (requestId !== requestIdRef.current) return;
 
-      setError('Context에서 포스트를 다시 불러오지 못했습니다.');
+      setError("Context에서 포스트를 다시 불러오지 못했습니다.");
     } finally {
       if (requestId === requestIdRef.current) {
         setLoading(false);
@@ -68,7 +68,7 @@ export function usePostContext() {
   const context = useContext(PostContext);
 
   if (!context) {
-    throw new Error('usePostContext must be used within PostProvider');
+    throw new Error("usePostContext must be used within PostProvider");
   }
 
   return context;

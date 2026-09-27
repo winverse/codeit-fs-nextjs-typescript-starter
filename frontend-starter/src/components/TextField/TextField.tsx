@@ -1,7 +1,7 @@
-import type { InputHTMLAttributes } from 'react';
-import { forwardRef } from 'react';
-import { clsx } from 'clsx';
-import * as styles from './TextField.css';
+import type { InputHTMLAttributes } from "react";
+import { forwardRef } from "react";
+import { clsx } from "clsx";
+import * as styles from "./TextField.css";
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;

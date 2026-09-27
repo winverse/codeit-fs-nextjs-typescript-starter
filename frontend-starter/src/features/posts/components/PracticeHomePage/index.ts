@@ -1,1 +1,1 @@
-export { default as PracticeHomePage } from './PracticeHomePage';
+export { default as PracticeHomePage } from "./PracticeHomePage";

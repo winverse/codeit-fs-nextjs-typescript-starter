@@ -1,6 +1,6 @@
-import { clsx } from 'clsx';
-import { getAuthorLabel } from '@/features/posts/utils/constants';
-import * as styles from './PostCard.css';
+import { clsx } from "clsx";
+import { getAuthorLabel } from "@/features/posts/utils/constants";
+import * as styles from "./PostCard.css";
 
 interface PostCardProps {
   post: any;

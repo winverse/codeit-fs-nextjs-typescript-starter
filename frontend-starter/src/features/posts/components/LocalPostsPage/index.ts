@@ -1,1 +1,1 @@
-export { default as LocalPostsPage } from './LocalPostsPage';
+export { default as LocalPostsPage } from "./LocalPostsPage";

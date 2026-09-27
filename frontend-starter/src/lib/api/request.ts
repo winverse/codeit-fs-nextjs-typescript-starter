@@ -4,12 +4,12 @@ export class HttpError extends Error {
     public readonly status: number,
   ) {
     super(message);
-    this.name = 'HttpError';
+    this.name = "HttpError";
   }
 }
 
 const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:4000';
+  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:4000";
 
 interface RequestOptions extends RequestInit {
   message?: string;
@@ -20,13 +20,13 @@ export async function request<T>(
   options: RequestOptions = {},
 ): Promise<T> {
   const {
-    message = 'API 요청에 실패했습니다.',
+    message = "API 요청에 실패했습니다.",
     headers,
     ...restOptions
   } = options;
   const response = await fetch(`${API_BASE_URL}${path}`, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       ...headers,
     },
     ...restOptions,

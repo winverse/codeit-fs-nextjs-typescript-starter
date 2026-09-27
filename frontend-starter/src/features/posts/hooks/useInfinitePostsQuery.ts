@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useInfiniteQuery } from '@tanstack/react-query';
-import { getPostPage } from '@/lib/api/posts';
-import { queryKeys } from '@/lib/query-keys';
+import { useInfiniteQuery } from "@tanstack/react-query";
+import { getPostPage } from "@/lib/api/posts";
+import { queryKeys } from "@/lib/query-keys";
 
 export function useInfinitePostsQuery() {
   return useInfiniteQuery({

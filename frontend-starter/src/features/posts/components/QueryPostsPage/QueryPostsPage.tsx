@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { Button } from '@/components/Button';
-import { Panel } from '@/components/Panel';
-import { PostCard } from '@/features/posts/components/PostCard';
-import { PostDetail } from '@/features/posts/components/PostDetail';
-import { PostForm } from '@/features/posts/components/PostForm';
-import type { Post, PostMutationInput, PostPage } from '@/features/posts/types';
-import { useInfinitePostsQuery } from '@/features/posts/hooks/useInfinitePostsQuery';
+import { useMemo, useState } from "react";
+import { toast } from "react-hot-toast";
+import { Button } from "@/components/Button";
+import { Panel } from "@/components/Panel";
+import { PostCard } from "@/features/posts/components/PostCard";
+import { PostDetail } from "@/features/posts/components/PostDetail";
+import { PostForm } from "@/features/posts/components/PostForm";
+import type { Post, PostMutationInput, PostPage } from "@/features/posts/types";
+import { useInfinitePostsQuery } from "@/features/posts/hooks/useInfinitePostsQuery";
 import {
   useCreatePostMutation,
   useDeletePostMutation,
   useUpdatePostMutation,
-} from '@/features/posts/hooks/usePostMutations';
+} from "@/features/posts/hooks/usePostMutations";
 import {
   usePostQuery,
   usePostsQuery,
-} from '@/features/posts/hooks/usePostQueries';
-import * as styles from './QueryPostsPage.css';
+} from "@/features/posts/hooks/usePostQueries";
+import * as styles from "./QueryPostsPage.css";
 
 interface QueryPostsPageProps {
   initialPosts: Post[];
@@ -48,7 +48,7 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
 
   async function handleCreatePost(input: PostMutationInput) {
     await createPostMutation.mutateAsync(input);
-    toast.success('포스트를 등록했습니다.');
+    toast.success("포스트를 등록했습니다.");
   }
 
   async function handleUpdatePost(input: PostMutationInput) {
@@ -61,7 +61,7 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
       input,
     });
     setIsEditMode(false);
-    toast.success('포스트를 수정했습니다.');
+    toast.success("포스트를 수정했습니다.");
   }
 
   async function handleDeletePost() {
@@ -72,7 +72,7 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
     await deletePostMutation.mutateAsync(selectedPostId);
     setSelectedPostId(null);
     setIsEditMode(false);
-    toast.success('포스트를 삭제했습니다.');
+    toast.success("포스트를 삭제했습니다.");
   }
 
   return (
@@ -142,7 +142,7 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
                   onClick={() => setIsEditMode((previous) => !previous)}
                   disabled={!selectedPost}
                 >
-                  {isEditMode ? '수정 폼 닫기' : '선택 포스트 수정'}
+                  {isEditMode ? "수정 폼 닫기" : "선택 포스트 수정"}
                 </Button>
                 <Button
                   type="button"
@@ -151,8 +151,8 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
                   disabled={!selectedPost || deletePostMutation.isPending}
                 >
                   {deletePostMutation.isPending
-                    ? '삭제 중'
-                    : '선택 포스트 삭제'}
+                    ? "삭제 중"
+                    : "선택 포스트 삭제"}
                 </Button>
               </div>
             </Panel>
@@ -193,8 +193,8 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
                   disabled={infinitePostsQuery.isFetchingNextPage}
                 >
                   {infinitePostsQuery.isFetchingNextPage
-                    ? '추가 로딩 중'
-                    : '더 보기'}
+                    ? "추가 로딩 중"
+                    : "더 보기"}
                 </Button>
               ) : (
                 <p>더 이상 불러올 포스트가 없습니다.</p>

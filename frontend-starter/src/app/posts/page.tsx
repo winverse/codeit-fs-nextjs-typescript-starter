@@ -1,5 +1,5 @@
-import { LocalPostsPage } from '@/features/posts/components/LocalPostsPage';
-import { getPosts } from '@/lib/api/posts';
+import { LocalPostsPage } from "@/features/posts/components/LocalPostsPage";
+import { getPosts } from "@/lib/api/posts";
 
 export default async function PostsPage({
   searchParams,
@@ -7,7 +7,7 @@ export default async function PostsPage({
   searchParams: any;
 }) {
   const { page: rawPage } = await searchParams;
-  const page = typeof rawPage === 'string' ? Number(rawPage) || 1 : 1;
+  const page = typeof rawPage === "string" ? Number(rawPage) || 1 : 1;
 
   const initialPosts = await getPosts();
 

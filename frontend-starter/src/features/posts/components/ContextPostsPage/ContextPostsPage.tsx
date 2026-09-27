@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import { nanoid } from 'nanoid';
-import { Button } from '@/components/Button';
-import { Panel } from '@/components/Panel';
-import { PostDetail } from '@/features/posts/components/PostDetail';
-import { PostList } from '@/features/posts/components/PostList';
+import { useMemo, useState } from "react";
+import { nanoid } from "nanoid";
+import { Button } from "@/components/Button";
+import { Panel } from "@/components/Panel";
+import { PostDetail } from "@/features/posts/components/PostDetail";
+import { PostList } from "@/features/posts/components/PostList";
 import {
   PostProvider,
   usePostContext,
-} from '@/features/posts/contexts/PostContext';
-import type { Post } from '@/features/posts/types';
-import * as styles from './ContextPostsPage.css';
+} from "@/features/posts/contexts/PostContext";
+import type { Post } from "@/features/posts/types";
+import * as styles from "./ContextPostsPage.css";
 
 interface ContextPostsPageProps {
   initialPosts: Post[];
@@ -31,10 +31,10 @@ function ContextPostsWorkspace() {
   function handleAddContextDraft() {
     const nextPost = {
       id: nanoid(),
-      title: 'Context에서 추가한 임시 포스트',
+      title: "Context에서 추가한 임시 포스트",
       content:
-        '이 시작본은 Provider props, createContext 제네릭, requestIdRef 패턴에 any가 남아 있는 상태입니다.',
-      authorId: 'author-4',
+        "이 시작본은 Provider props, createContext 제네릭, requestIdRef 패턴에 any가 남아 있는 상태입니다.",
+      authorId: "author-4",
     };
 
     setPosts((previousPosts: Post[]) => [nextPost, ...previousPosts]);
@@ -54,7 +54,7 @@ function ContextPostsWorkspace() {
 
       <section className={styles.actions}>
         <Button type="button" onClick={refreshPosts} disabled={loading}>
-          {loading ? '새로고침 중' : 'refreshPosts 실행'}
+          {loading ? "새로고침 중" : "refreshPosts 실행"}
         </Button>
         <Button
           type="button"
@@ -88,7 +88,7 @@ function ContextPostsWorkspace() {
             description="교재 6장에서 value 타입, Provider props, requestIdRef 위치를 정리합니다."
           >
             <p className={styles.lead}>
-              이 구간에서는 <code>createContext</code> 제네릭과{' '}
+              이 구간에서는 <code>createContext</code> 제네릭과{" "}
               <code>useRef</code> 제네릭이 아직 느슨하게 남아 있습니다. 교재를
               따라가며 Context value가 어떤 모양을 가져야 하는지 명확히 연결하면
               됩니다.

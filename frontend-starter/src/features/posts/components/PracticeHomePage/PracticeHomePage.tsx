@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { Panel } from '@/components/Panel';
+import Link from "next/link";
+import { Panel } from "@/components/Panel";
 import {
   CHAPTER_LINKS,
   LOCAL_PRACTICE_STEPS,
-} from '@/features/posts/utils/constants';
-import * as styles from './PracticeHomePage.css';
+} from "@/features/posts/utils/constants";
+import * as styles from "./PracticeHomePage.css";
 
 export default function PracticeHomePage() {
   return (

@@ -1,5 +1,5 @@
-import type { SelectHTMLAttributes } from 'react';
-import * as styles from './SelectField.css';
+import type { SelectHTMLAttributes } from "react";
+import * as styles from "./SelectField.css";
 
 interface Option {
   value: string | number;

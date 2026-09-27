@@ -1,16 +1,16 @@
-import { defineConfig, globalIgnores } from 'eslint/config';
-import js from '@eslint/js';
-import nextVitals from 'eslint-config-next/core-web-vitals';
+import { defineConfig, globalIgnores } from "eslint/config";
+import js from "@eslint/js";
+import nextVitals from "eslint-config-next/core-web-vitals";
 
 export default defineConfig([
   js.configs.recommended,
   ...nextVitals,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ["**/*.ts", "**/*.tsx"],
     rules: {
-      'no-undef': 'off',
-      'no-unused-vars': 'off',
+      "no-undef": "off",
+      "no-unused-vars": "off",
     },
   },
 ]);

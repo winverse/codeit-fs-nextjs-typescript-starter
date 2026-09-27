@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { createPost, deletePost, updatePost } from '@/lib/api/posts';
-import { queryKeys } from '@/lib/query-keys';
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { createPost, deletePost, updatePost } from "@/lib/api/posts";
+import { queryKeys } from "@/lib/query-keys";
 
 export function useCreatePostMutation() {
   const queryClient = useQueryClient();

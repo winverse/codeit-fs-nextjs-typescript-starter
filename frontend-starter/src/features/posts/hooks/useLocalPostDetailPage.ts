@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import type { Post } from '@/features/posts/types';
-import { getPost } from '@/lib/api/posts';
+import { useEffect, useState } from "react";
+import type { Post } from "@/features/posts/types";
+import { getPost } from "@/lib/api/posts";
 
 export default function useLocalPostDetailPage(postId: string | null) {
   const [post, setPost] = useState<Post | null>(null);
@@ -12,7 +12,7 @@ export default function useLocalPostDetailPage(postId: string | null) {
   useEffect(() => {
     if (!postId) {
       setPost(null);
-      setError('URL에서 postId를 찾지 못했습니다.');
+      setError("URL에서 postId를 찾지 못했습니다.");
       setIsLoading(false);
       return;
     }
@@ -32,7 +32,7 @@ export default function useLocalPostDetailPage(postId: string | null) {
         }
       } catch {
         if (!ignore) {
-          setError('포스트 상세 정보를 불러오지 못했습니다.');
+          setError("포스트 상세 정보를 불러오지 못했습니다.");
         }
       } finally {
         if (!ignore) {

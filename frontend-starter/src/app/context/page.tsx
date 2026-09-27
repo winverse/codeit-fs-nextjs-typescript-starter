@@ -1,5 +1,5 @@
-import { ContextPostsPage } from '@/features/posts/components/ContextPostsPage';
-import { getPosts } from '@/lib/api/posts';
+import { ContextPostsPage } from "@/features/posts/components/ContextPostsPage";
+import { getPosts } from "@/lib/api/posts";
 
 export default async function ContextPostsRoutePage() {
   const initialPosts = await getPosts();
