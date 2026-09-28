@@ -31,15 +31,12 @@ pnpm dev
 
 브라우저에서 `http://localhost:3000`을 열고 과정 안내와 실습 라우트를 확인합니다. 백엔드는 `http://localhost:4000`에서 실행되어야 합니다.
 
-## 포맷 및 검증
+## 타입 검사와 빌드
 
 ```bash
 cd frontend-starter
-pnpm format
-pnpm exec next typegen
 pnpm exec tsc --noEmit
-pnpm lint
 pnpm build
 ```
 
-`pnpm format`은 프로젝트 파일을 Prettier 형식으로 수정합니다. `next typegen`은 `PageProps`처럼 라우트 구조에서 생성되는 전역 타입을 준비합니다. `pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.
+`pnpm build`는 정적 페이지 생성 중 API를 읽으므로 먼저 백엔드를 실행합니다.

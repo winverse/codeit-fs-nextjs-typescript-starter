@@ -31,7 +31,7 @@ function ContextPostsWorkspace() {
       id: nanoid(),
       title: "Context에서 추가한 임시 포스트",
       content:
-        "이 시작본은 Provider props와 createContext 제네릭에 any가 남아 있는 상태입니다.",
+        "Provider가 공유하는 포스트 목록에 추가되어 목록과 상세에 함께 나타납니다.",
       authorId: "author-4",
     };
 

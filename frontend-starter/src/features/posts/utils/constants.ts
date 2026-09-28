@@ -17,7 +17,7 @@ export const DEFAULT_POST_FORM_VALUES = {
 
 export const LOCAL_PRACTICE_STEPS = [
   "3장에서 Post 타입과 PostCard/PostDetail/PostForm props의 any를 정리합니다.",
-  "4장에서 이벤트 핸들러 매개변수의 any를 구체 타입으로 바꿉니다.",
+  "4장에서 이벤트 핸들러 파라미터의 any를 구체 타입으로 바꿉니다.",
   "5장에서 useState, useRef, useParams 관련 any와 제네릭을 채웁니다.",
   "6장과 7장에서 Context와 TanStack Query 구간의 any를 제거합니다.",
 ];
