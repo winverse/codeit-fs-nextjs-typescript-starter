@@ -40,8 +40,14 @@ export const CHAPTER_LINKS = [
     href: "/query",
     eyebrow: "7장",
     title: "TanStack Query 타입 적용",
+    description: "useQuery, useMutation의 데이터 타입과 입력 타입을 채웁니다.",
+  },
+  {
+    href: "/query/infinite",
+    eyebrow: "7장",
+    title: "useInfiniteQuery 타입 적용",
     description:
-      "useQuery, useMutation, useInfiniteQuery의 데이터 타입과 입력 타입을 채웁니다.",
+      "더 보기 목록의 페이지 결과와 다음 페이지 번호 타입을 채웁니다.",
   },
 ] as const;
 

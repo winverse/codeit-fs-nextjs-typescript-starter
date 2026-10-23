@@ -7,8 +7,7 @@ import { Panel } from "@/components/Panel";
 import { PostCard } from "@/features/posts/components/PostCard";
 import { PostDetail } from "@/features/posts/components/PostDetail";
 import { PostForm } from "@/features/posts/components/PostForm";
-import type { Post, PostMutationInput, PostPage } from "@/features/posts/types";
-import { useInfinitePostsQuery } from "@/features/posts/hooks/useInfinitePostsQuery";
+import type { Post, PostMutationInput } from "@/features/posts/types";
 import {
   useCreatePostMutation,
   useDeletePostMutation,
@@ -31,17 +30,16 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
   const [isEditMode, setIsEditMode] = useState(false);
 
   const postsQuery = usePostsQuery(initialPosts);
-  const selectedPostQuery = usePostQuery(selectedPostId);
-  const infinitePostsQuery = useInfinitePostsQuery();
+  const posts = postsQuery.data ?? [];
+  const selectedPostQuery = usePostQuery(
+    selectedPostId,
+    posts.find((post: Post) => post.id === selectedPostId),
+  );
   const createPostMutation = useCreatePostMutation();
   const updatePostMutation = useUpdatePostMutation();
   const deletePostMutation = useDeletePostMutation();
 
   const selectedPost = selectedPostQuery.data ?? null;
-  const posts = postsQuery.data ?? [];
-  const infinitePosts =
-    infinitePostsQuery.data?.pages.flatMap((page: PostPage) => page.items) ??
-    [];
 
   async function handleCreatePost(input: PostMutationInput) {
     await createPostMutation.mutateAsync(input);
@@ -80,10 +78,9 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
           description="교재 7장에서 조회/변경 Hook 제네릭과 응답 타입을 채워 넣는 구간입니다."
         >
           <p className={styles.lead}>
-            이 시작본은 useQuery, useMutation, useInfiniteQuery가 모두 동작은
-            하지만 데이터 타입이 느슨하게 남아 있는 상태입니다. 교재를 따라가며
-            요청 함수, 오류 타입, 무한 조회 페이지 결과를 차례대로 고정하면
-            됩니다.
+            이 시작본은 useQuery와 useMutation이 모두 동작은 하지만 데이터
+            타입이 느슨하게 남아 있는 상태입니다. 교재를 따라가며 요청 함수와
+            오류 타입을 차례대로 고정하면 됩니다.
           </p>
         </Panel>
 
@@ -168,35 +165,6 @@ export default function QueryPostsPage({ initialPosts }: QueryPostsPageProps) {
                 />
               </Panel>
             ) : null}
-
-            <Panel
-              title="useInfiniteQuery: 더 보기 목록"
-              description="pages 구조와 nextPage 계산 타입을 정리합니다."
-            >
-              <div className={styles.infiniteList}>
-                {infinitePosts.map((post: Post) => (
-                  <PostCard key={`infinite-${post.id}`} post={post} />
-                ))}
-              </div>
-              {infinitePostsQuery.error ? (
-                <p className={styles.status}>
-                  {infinitePostsQuery.error.message}
-                </p>
-              ) : null}
-              {infinitePostsQuery.hasNextPage ? (
-                <Button
-                  type="button"
-                  onClick={() => infinitePostsQuery.fetchNextPage()}
-                  disabled={infinitePostsQuery.isFetchingNextPage}
-                >
-                  {infinitePostsQuery.isFetchingNextPage
-                    ? "추가 로딩 중"
-                    : "더 보기"}
-                </Button>
-              ) : (
-                <p>더 이상 불러올 포스트가 없습니다.</p>
-              )}
-            </Panel>
           </div>
         </section>
       </div>

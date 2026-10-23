@@ -40,6 +40,7 @@ cp .env.example .env.local
 - `/posts/[postId]`: `useParams` 시작본
 - `/context`: 6장 Context 학습 구간
 - `/query`: 7장 TanStack Query 학습 구간
+- `/query/infinite`: 7장 useInfiniteQuery 학습 구간
 
 ## 교재 적용 후 타입 검사와 빌드
 

@@ -12,9 +12,10 @@ export function usePostsQuery(initialPosts?: any) {
   });
 }
 
-export function usePostQuery(postId: any) {
+export function usePostQuery(postId: any, initialPost?: any) {
   return useQuery<any, Error>({
     queryKey: queryKeys.detail(postId),
     queryFn: postId ? () => getPost(postId) : skipToken,
+    initialData: initialPost,
   });
 }
