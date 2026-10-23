@@ -32,23 +32,26 @@ export default function PostForm({
   const titleInputRef = useRef<any>(null);
 
   function handleTitleChange(event: any) {
+    const title = event.currentTarget.value;
     setFormData((previousState: any) => ({
       ...previousState,
-      title: event.currentTarget.value,
+      title,
     }));
   }
 
   function handleContentChange(event: any) {
+    const content = event.currentTarget.value;
     setFormData((previousState: any) => ({
       ...previousState,
-      content: event.currentTarget.value,
+      content,
     }));
   }
 
   function handleAuthorChange(event: any) {
+    const authorId = event.currentTarget.value;
     setFormData((previousState: any) => ({
       ...previousState,
-      authorId: event.currentTarget.value,
+      authorId,
     }));
   }
 
