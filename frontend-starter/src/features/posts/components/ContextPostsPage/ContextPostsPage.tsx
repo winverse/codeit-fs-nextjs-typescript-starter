@@ -85,9 +85,9 @@ function ContextPostsWorkspace() {
             description="교재 6장에서 value 타입과 Provider props를 정리합니다."
           >
             <p className={styles.lead}>
-              이 구간에서는 <code>createContext</code> 제네릭이 아직 느슨하게
-              남아 있습니다. 교재를 따라가며 Context value가 어떤 모양을 가져야
-              하는지 명확히 연결하면 됩니다.
+              이 구간에서는 <code>PostContextValue</code> 필드 타입이 아직
+              느슨하게 남아 있습니다. 교재를 따라가며 Context value가 어떤
+              모양을 가져야 하는지 명확히 연결하면 됩니다.
             </p>
           </Panel>
         </div>

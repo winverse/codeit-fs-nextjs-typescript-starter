@@ -1,4 +1,4 @@
-import type { AuthorOption, Post } from "@/features/posts/types";
+import type { AuthorOption } from "@/features/posts/types";
 
 export const AUTHOR_OPTIONS: AuthorOption[] = [
   { value: "author-1", label: "1번 강사" },
@@ -56,8 +56,4 @@ export function getAuthorLabel(authorId: string) {
     AUTHOR_OPTIONS.find((option) => option.value === authorId)?.label ??
     `작성자 ${authorId}`
   );
-}
-
-export function findPostById(posts: Post[], postId: string) {
-  return posts.find((post) => post.id === postId) ?? null;
 }
